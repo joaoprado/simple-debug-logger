@@ -1,0 +1,51 @@
+{
+    "name": "joaoprado/simple-debug-logger",
+    "description": "Simple debugging logs for endpoint and job queries",
+    "keywords": [
+        "joaoprado",
+        "simple-debug-logger"
+    ],
+    "homepage": "https://github.com/joaoprado/simple-debug-logger",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "João Prado",
+            "email": "dev@joaoprado.com.br",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joaoprado\\SimpleDebugLogger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Joaoprado\\SimpleDebugLogger\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joaoprado\\SimpleDebugLogger\\SimpleDebugLoggerServiceProvider"
+            ]
+        }
+    }
+}

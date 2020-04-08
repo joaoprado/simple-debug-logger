@@ -15,15 +15,11 @@ class SimpleDebugLoggerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        app('log')->stack([
-            'channels' => [
-                'query_logging' => [
-                    'driver' => 'daily',
-                    'path' => storage_path('logs/queries.log'),
-                    'level' => 'debug',
-                    'days' => 30,
-                ]
-            ]
+        $this->app->make('config')->set('logging.channels.query_logging', [
+            'driver' => 'daily',
+            'path' => storage_path('logs/queries.log'),
+            'level' => 'debug',
+            'days' => 30,
         ]);
 
         $this->enableQueryLogging();
